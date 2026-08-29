@@ -58,7 +58,7 @@ The original dataset was heavily skewed towards positive reviews ("cực kỳ h�
 
 ## 5. Feature Extraction & Traditional Machine Learning
 We extracted features using `CountVectorizer` and `TfidfVectorizer`, then selected the most important features using `SelectKBest` (Chi-squared).
-We experimented with 4 traditional ML models for a 2-class problem (Cực kỳ hài lòng / Không hài lòng):
+We experimented with 4 traditional ML models for a 2-class problem (Cực kỳ hài lòng / Không hài lòng).
 ### 5.1. Accuracy Comparison
 **SVM** and **Logistic Regression** achieved the highest accuracy at ~88.8% and ~88.7%, respectively. When expanding to a 3-class problem (adding a "Bình thường" neutral class), accuracy dropped to ~69.7% due to ambiguous semantic boundaries.
 ![ML Models Accuracy Comparison](images/accuracy_comparison.png)
