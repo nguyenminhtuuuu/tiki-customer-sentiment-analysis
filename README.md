@@ -23,7 +23,29 @@ The data was collected from Tiki.vn. After initial cleaning, the dataset consist
 | `rating` | Rating from 1 to 5 stars |
 | `content` | Comment content (free text, containing customer emotions and opinions) |
 
-## 3. Data Preprocessing & NLP Pipeline
+
+## 3. Exploratory Data Analysis (EDA) - Before Training
+Understanding the raw text data is crucial. We visualized the distribution of words, sentence lengths, and sentiment labels before applying any machine learning models.
+
+### 3.1. Text Characteristics
+The word cloud and frequency charts reveal that words like "sách" (book), "giao" (delivery), "nhanh" (fast), and "đẹp" (beautiful) dominate the positive reviews, highlighting that delivery speed and book quality are key satisfaction drivers.
+
+![Top 20 Frequent Words](images/top_20_words.png)
+*Figure 1: Top 20 most frequent words in the dataset.*
+
+![Word Cloud](images/word_cloud.png)
+*Figure 2: Word Cloud showing prominent keywords.*
+
+![Sentence Length Distribution](images/sentence_length.png)
+*Figure 3: Sentence length distribution (Log scale). The mean length is 143 characters, indicating that users tend to leave short and concise reviews.*
+
+### 3.2. Class Imbalance Problem
+An initial check on the target variable revealed a severe class imbalance. Positive reviews (4-5 stars / "Cực kỳ hài lòng") accounted for the vast majority of the dataset (76.7% for 5-star ratings). 
+
+![Label Distribution](images/label_distribution_pie_chart.png)
+*Figure 4: Label and Rating distribution highlighting extreme imbalance.*
+
+## 4. Exploratory Data Analysis (EDA) 
 To prepare the raw text for machine learning models, we built a comprehensive text processing pipeline:
 - **Cleaning:** Removed duplicate records, null values, emojis, and special characters.
 - **Normalization:** Converted text to lowercase and applied word segmentation using `Underthesea`.
@@ -32,12 +54,6 @@ To prepare the raw text for machine learning models, we built a comprehensive te
 **Handling Data Imbalance:**
 The original dataset was heavily skewed towards positive reviews ("cực kỳ hài lòng" accounted for ~78,000 records). We applied **Undersampling** to balance the classes and prevent model bias.
 
-```python
-from imblearn.under_sampling import RandomUnderSampler
-
-# Cân bằng dữ liệu sử dụng Undersampling cho tập nhãn
-rus = RandomUnderSampler(random_state=42)
-X_resampled, y_resampled = rus.fit_resample(X_features, y_labels)
 
 ## 4. Feature Extraction & Traditional Machine Learning
 We extracted features using CountVectorizer and TfidfVectorizer, then selected the most important features using SelectKBest (Chi-squared).
