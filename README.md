@@ -88,4 +88,9 @@ We deployed our PhoBERT sentiment analysis model using an interactive web interf
 
 ![App Interface](images/app_demo.png)
 *Figure 8: Real-time prediction UI built with Streamlit.*
+## 8. Future Directions
+Advanced NLP Techniques: Further refine the handling of sarcasm, slang, and unstructured text patterns.
 
+Entity Extraction: Develop capabilities to classify sentiments based on specific topics (e.g., shipping speed vs. product quality).
+
+Automated Data Ingestion: Build advanced web scraping pipelines to constantly update the model with new reviews.
