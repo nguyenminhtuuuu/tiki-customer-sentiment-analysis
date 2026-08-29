@@ -42,6 +42,7 @@ The word cloud and frequency charts reveal that words like "sách" (book), "giao
 ### 3.2. Class Imbalance Problem
 An initial check on the target variable revealed a severe class imbalance. Positive reviews (4-5 stars / "Cực kỳ hài lòng") accounted for the vast majority of the dataset (76.7% for 5-star ratings). 
 
+
 ![Label Distribution](images/label_distribution_pie_chart.png)
 *Figure 4: Label and Rating distribution highlighting extreme imbalance.*
 
