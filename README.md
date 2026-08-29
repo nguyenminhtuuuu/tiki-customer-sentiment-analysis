@@ -61,15 +61,11 @@ The original dataset was heavily skewed towards positive reviews ("cực kỳ h�
 
 ## 5. Feature Extraction & Traditional Machine Learning
 We extracted features using `CountVectorizer` and `TfidfVectorizer`, then selected the most important features using `SelectKBest` (Chi-squared).
-
 We experimented with 4 traditional ML models for a 2-class problem (Cực kỳ hài lòng / Không hài lòng):
-
 ### 5.1. Accuracy Comparison
 **SVM** and **Logistic Regression** achieved the highest accuracy at ~88.8% and ~88.7%, respectively. When expanding to a 3-class problem (adding a "Bình thường" neutral class), accuracy dropped to ~69.7% due to ambiguous semantic boundaries.
-
 ![ML Models Accuracy Comparison](images/accuracy_comparison.png)
 *Figure 6: Accuracy comparison across 4 machine learning models.*
-
 ### 5.2. Confusion Matrices
 For the best-performing SVM model (2-class), it accurately predicted both positive and negative labels with minimal false positives/negatives.
 
