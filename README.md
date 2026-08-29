@@ -43,8 +43,6 @@ An initial check on the target variable revealed a severe class imbalance. Posit
 ![Label Distribution](images/label_distribution_pie_chart.png)
 *Figure 4: Label and Rating distribution highlighting extreme imbalance.*
 
----
-
 ## 4. Data Preprocessing & Balancing 
 To prepare the raw text for machine learning models, we built a comprehensive text processing pipeline:
 - **Cleaning:** Removed duplicate records, null values, emojis, and special characters.
@@ -57,7 +55,6 @@ The original dataset was heavily skewed towards positive reviews ("cực kỳ h�
 ![Data Distribution Before and After Undersampling](images/before_after_balancing.png)
 *Figure 5: Class distribution before (78,079 vs 10,698) and after (10,698 each) applying Undersampling.*
 
----
 
 ## 5. Feature Extraction & Traditional Machine Learning
 We extracted features using `CountVectorizer` and `TfidfVectorizer`, then selected the most important features using `SelectKBest` (Chi-squared).
@@ -72,12 +69,9 @@ For the best-performing SVM model (2-class), it accurately predicted both positi
 ![Confusion Matrix 2 Labels](images/confusion_matrix_2labels.png)
 *Figure 7: Confusion Matrices for the 2-class prediction problem.*
 
----
-
 ## 6. Deep Learning Upgrade: PhoBERT
 To improve the system's ability to understand the complex context, slang, and nuances of the Vietnamese language, we upgraded our pipeline using **PhoBERT** - a state-of-the-art language model for Vietnamese. The model successfully classified difficult ambiguous sentences with high confidence.
 
----
 
 ## 7. Web Application
 We deployed our PhoBERT sentiment analysis model using an interactive web interface. Users can input any product review text and instantly see the predicted sentiment.
