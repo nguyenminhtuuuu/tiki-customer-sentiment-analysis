@@ -31,13 +31,14 @@ Understanding the raw text data is crucial. We visualized the distribution of wo
 The word cloud and frequency charts reveal that words like "sách" (book), "giao" (delivery), "nhanh" (fast), and "đẹp" (beautiful) dominate the positive reviews, highlighting that delivery speed and book quality are key satisfaction drivers.
 
 ![Top 20 Frequent Words](images/top_20_words.png)
+
 *Figure 1: Top 20 most frequent words in the dataset.*
 
 ![Word Cloud](images/word_cloud.png)
 *Figure 2: Word Cloud showing prominent keywords.*
 
 ![Sentence Length Distribution](images/sentence_length.png)
-*Figure 3: Sentence length distribution (Log scale). The mean length is 143 characters, indicating that users tend to leave short and concise reviews.*
+*Figure 3: Sentence length distribution. *
 
 ### 3.2. Class Imbalance Problem
 An initial check on the target variable revealed a severe class imbalance. Positive reviews (4-5 stars / "Cực kỳ hài lòng") accounted for the vast majority of the dataset (76.7% for 5-star ratings). 
